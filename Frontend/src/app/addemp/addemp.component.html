@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<h3 class="text-info text-center">Add Employee</h3>
+
+<form action="" class="container " [formGroup]="empform" (ngSubmit)="submitted()">
+<table class="table mt-4">
+    <tr>
+        <td><b>First Name</b></td>
+        <td><input type="text" class="form-control " placeholder="First Name" formControlName="first_name" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.first_name.invalid && empform.controls.first_name.touched">Invalid First name</div>
+    </tr>
+    <tr>
+        <td><b>Last Name</b></td>
+        <td><input type="text" class="form-control" placeholder="Last Name" formControlName="last_name" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.last_name.invalid && empform.controls.last_name.touched">Invalid Last name</div>
+    </tr>
+    <tr>
+        <td><b>Gender</b></td>
+        <td class="form-check-inline">
+            <label class="form-check-label ml-2"><input type="radio" class="form-check-input" formControlName="gender" value="Male" [(ngModel)]="select_gender">Male</label>
+            <label class="form-check-label ml-4"><input type="radio" class="form-check-input" formControlName="gender" value="Female" [(ngModel)]="select_gender">Female</label>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Birth Date</b></td>
+        <td><input type="date" class="form-control" placeholder="Date of birth" formControlName="dob" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.dob.invalid && empform.controls.dob.touched">Invalid date</div>
+    </tr>
+    <tr>
+        <td><b>Place</b></td>
+        <td><input type="text" class="form-control" placeholder="Place" formControlName="place" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.place.invalid && empform.controls.place.touched">Invalid place</div>
+    </tr>
+    <tr>
+        <td><b>Phone</b></td>
+        <td><input type="number" class="form-control" placeholder="Mobile Number" formControlName="phone" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.phone.invalid && empform.controls.phone.touched">Invalid phone number</div>
+    </tr>
+    <tr>
+        <td><b>Email</b></td>
+        <td><input type="email" class="form-control" placeholder="Email" formControlName="email" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.email.invalid && empform.controls.email.touched">Invalid email</div>
+    </tr>
+    <tr>
+        <td><b>Department</b></td>
+        <td><input type="text" class="form-control" placeholder="Department" formControlName="dept" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.dept.invalid && empform.controls.dept.touched">Invalid Department</div>
+    </tr>
+    <tr>
+        <td><b>Job Title</b></td>
+        <td><input type="text" class="form-control" placeholder="Job Title" formControlName="job_title" ></td>
+        <div class="text-danger small" *ngIf="empform.controls.job_title.invalid && empform.controls.job_title.touched">Invalid job title</div>
+    </tr>
+    <tr>
+        <td><b>Profile Image</b></td>
+        <td><input type="file" class="form-control" placeholder="Job Title" formControlName="profile" (change)="fileSubmit($event)"></td>
+        <div class="text-danger small" *ngIf="empform.controls.profile.invalid && empform.controls.profile.touched">Invalid profile pic</div>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-success">Submit</button></td>
+    </tr>
+    
+
+        
+        
+</table>
+</form>
